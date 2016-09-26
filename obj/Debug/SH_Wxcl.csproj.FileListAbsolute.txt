@@ -7,3 +7,12 @@ c:\users\shenhua\documents\visual studio 2015\Projects\SH_Wxcl\SH_Wxcl\bin\Debug
 c:\users\shenhua\documents\visual studio 2015\Projects\SH_Wxcl\SH_Wxcl\bin\Debug\SH_Wxcl.pdb
 c:\users\shenhua\documents\visual studio 2015\Projects\SH_Wxcl\SH_Wxcl\obj\Debug\SH_Wxcl.exe
 c:\users\shenhua\documents\visual studio 2015\Projects\SH_Wxcl\SH_Wxcl\obj\Debug\SH_Wxcl.pdb
+F:\post\SH_Wxcl\bin\Debug\SH_Wxcl.exe.config
+F:\post\SH_Wxcl\obj\Debug\SH_Wxcl.exe
+F:\post\SH_Wxcl\obj\Debug\SH_Wxcl.pdb
+F:\post\SH_Wxcl\obj\Debug\SH_Wxcl.csprojResolveAssemblyReference.cache
+F:\post\SH_Wxcl\obj\Debug\SH_Wxcl.Form1.resources
+F:\post\SH_Wxcl\obj\Debug\SH_Wxcl.Properties.Resources.resources
+F:\post\SH_Wxcl\obj\Debug\SH_Wxcl.csproj.GenerateResource.Cache
+F:\post\SH_Wxcl\bin\Debug\SH_Wxcl.exe
+F:\post\SH_Wxcl\bin\Debug\SH_Wxcl.pdb

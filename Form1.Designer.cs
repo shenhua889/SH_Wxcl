@@ -39,11 +39,10 @@
             // 
             this.dataGridView1.AllowDrop = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 15);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1317, 779);
+            this.dataGridView1.Size = new System.Drawing.Size(988, 623);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.dataGridView1_DragDrop);
             this.dataGridView1.DragEnter += new System.Windows.Forms.DragEventHandler(this.dataGridView1_DragEnter);
@@ -51,25 +50,26 @@
             // checkedListBox1
             // 
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(1357, 15);
-            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBox1.Location = new System.Drawing.Point(1018, 12);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(225, 384);
+            this.checkedListBox1.Size = new System.Drawing.Size(170, 308);
             this.checkedListBox1.TabIndex = 1;
             // 
             // checkedListBox2
             // 
             this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Location = new System.Drawing.Point(1357, 406);
+            this.checkedListBox2.Location = new System.Drawing.Point(1018, 325);
+            this.checkedListBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(225, 204);
+            this.checkedListBox2.Size = new System.Drawing.Size(170, 164);
             this.checkedListBox2.TabIndex = 2;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1357, 634);
+            this.button1.Location = new System.Drawing.Point(1018, 507);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(225, 160);
+            this.button1.Size = new System.Drawing.Size(169, 128);
             this.button1.TabIndex = 3;
             this.button1.Text = "开始";
             this.button1.UseVisualStyleBackColor = true;
@@ -77,14 +77,13 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1698, 808);
+            this.ClientSize = new System.Drawing.Size(1256, 646);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.checkedListBox2);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

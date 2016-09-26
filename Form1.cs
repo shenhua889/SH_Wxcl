@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.IO;
@@ -77,8 +75,8 @@ namespace SH_Wxcl
         private DataTable GetCsv(string FilePath)
         {
             DataTable dt = new DataTable();
-            FileStream fs= null;
-            StreamReader sr= null;
+            FileStream fs = null;
+            StreamReader sr = null;
             try
             {
                 fs = new FileStream(FilePath, FileMode.OpenOrCreate);
@@ -90,7 +88,7 @@ namespace SH_Wxcl
                 {
                     dt.Columns.Add(column);
                 }
-                while(!sr.EndOfStream)
+                while (!sr.EndOfStream)
                 {
                     DataRow dr = dt.NewRow();
                     Datas = sr.ReadLine().Split('\t');
@@ -99,7 +97,7 @@ namespace SH_Wxcl
                 }
                 return dt;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
@@ -115,7 +113,7 @@ namespace SH_Wxcl
         /// </summary>
         /// <param name="NewSelect">新的数据</param>
         /// <param name="FilePath">路径</param>
-        private void AppendOrCreateToCsv(List<string> NewSelect,string FilePath)
+        private void AppendOrCreateToCsv(List<string> NewSelect, string FilePath)
         {
             FileStream fs = null;
             StreamWriter sw = null;
@@ -124,7 +122,7 @@ namespace SH_Wxcl
                 StringBuilder sb = new StringBuilder();
                 fs = new FileStream(FilePath, FileMode.OpenOrCreate);
                 sw = new StreamWriter(new BufferedStream(fs), System.Text.Encoding.Default);
-                foreach(string each in NewSelect)
+                foreach (string each in NewSelect)
                 {
                     sb.Append(each + "/n");
                 }
@@ -217,46 +215,81 @@ namespace SH_Wxcl
         /// <param name="list">上次选上的选项</param>
         private void SetCheckListBox(List<string> list)
         {
-            foreach(string each in list)
+            foreach (string each in list)
             {
-                if(checkedListBox1.Items.Contains(each))
+                if (checkedListBox1.Items.Contains(each))
                 {
                     checkedListBox1.SetItemChecked(checkedListBox1.Items.IndexOf(each), true);
                 }
             }
         }
+        /// <summary>
+        /// 对表格中重复的订单编号合并
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <returns></returns>
         private DataTable Table_HB(DataTable dt)
         {
             DataTable dt_HB = dt.Clone();
             List<string> DDBH = new List<string>();//订单编号
             List<string> BZ = new List<string>();//备注
             List<string> SP = new List<string>();//商品编号和数量
-            foreach(DataRow dr in dt.Rows)
+            foreach (DataRow dr in dt.Rows)
             {
                 //订单编号没有存在
-                if(!DDBH.Contains(dr["订单编号"]))
+                if (!DDBH.Contains(dr["订单编号"].ToString()))
                 {
                     DataRow temp_dr = dt_HB.NewRow();
                     temp_dr.ItemArray = dr.ItemArray;
                     dt_HB.Rows.Add(temp_dr);
                     DDBH.Add(dr["订单编号"].ToString());
                     BZ.Add(dr["用户留言"].ToString());
-                    SP.Add(dr["商品编码"].ToString() + "*" + dr["数量"].ToString());
+                    SP.Add(dr["商品编号"].ToString() + "*" + dr["数量"].ToString() + "册");
                 }
                 else
                 {
-                    int i = DDBH.IndexOf(dr["订单编号"]);
-                    BZ[i] = BZ[i] + dr["用户留言"].ToString();
-                    SP[i] = SP[i] + "  " + dr["商品编码"].ToString() + "*" + dr["数量"].ToString();
+                    int i = DDBH.IndexOf(dr["订单编号"].ToString());
+                    BZ[i] = BZ[i] + dr["用户留言"].ToString() + "  ";
+                    SP[i] = SP[i] + "  " + dr["商品编号"].ToString() + "*" + dr["数量"].ToString() + "册";
                 }
             }
             //添加备注字段
             dt_HB.Columns.Add("备注");
-            for(int i=0;i<dt_HB.Rows.Count;i++)
+            for (int i = 0; i < dt_HB.Rows.Count; i++)
             {
                 dt_HB.Rows[i]["备注"] = BZ[i] + SP[i];
             }
             return dt_HB;
+        }
+        private DataTable Table_SX(DataTable dt)
+        {
+            List<string> SPBM_True = new List<string>();
+            List<string> YF_True = new List<string>();
+            for (int i = 0; i < checkedListBox1.Items.Count; i++)
+            {
+                if (checkedListBox1.GetItemChecked(i))
+                {
+                    SPBM_True.Add(checkedListBox1.Items[i].ToString());
+                }
+            }
+            for (int j = 0; j < checkedListBox2.Items.Count; j++)
+            {
+                if (checkedListBox2.GetItemChecked(j))
+                {
+                    YF_True.Add(checkedListBox2.Items[j].ToString());
+                }
+            }
+            DataTable dt_SX = dt.Clone();
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (SPBM_True.Contains(dr["商品编码"].ToString()) && !YF_True.Contains(dr["运费(自提)"].ToString()))
+                {
+                    DataRow Temp_dr = dt_SX.NewRow();
+                    Temp_dr.ItemArray = dr.ItemArray;
+                    dt_SX.Rows.Add(Temp_dr);
+                }
+            }
+            return dt_SX;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -272,7 +305,7 @@ namespace SH_Wxcl
         private void dataGridView1_DragDrop(object sender, DragEventArgs e)
         {
             Clear();
-            DataTable dt=new DataTable();
+            DataTable dt = new DataTable();
             List<string> SPBM = new List<string>();
             List<string> YF = new List<string>();
             string dataFile = ((System.Array)e.Data.GetData(DataFormats.FileDrop)).GetValue(0).ToString();
@@ -285,11 +318,11 @@ namespace SH_Wxcl
                 //商品编码显示
                 foreach (DataRow dr in dt.Rows)
                 {
-                    if(!SPBM.Contains(dr["商品编码"].ToString()))
+                    if (!SPBM.Contains(dr["商品编码"].ToString()))
                     {
                         SPBM.Add(dr["商品编码"].ToString());
                     }
-                    if(!YF.Contains(dr["运费(自提)"].ToString()))
+                    if (!YF.Contains(dr["运费(自提)"].ToString()))
                     {
                         YF.Add(dr["运费(自提)"].ToString());
                     }
@@ -297,49 +330,37 @@ namespace SH_Wxcl
                 SPBM.Sort();
                 ListToCheckedListBox(SPBM);
                 ListToCheckedListBox2(YF);
+                checkedListBox2.SetItemChecked(checkedListBox2.Items.IndexOf("自提"), true);
                 //商品编号打勾
-                DataTable Table_SetSPBM = GetCsv(@"C:\Users\shenhua\Desktop\程序\1.csv");
-                List<string> SetSPBM = new List<string>();
-                List<string> SPDW = new List<string>();
-                foreach(DataRow dr in Table_SetSPBM.Rows)
+                if (System.IO.File.Exists(@"F:\SH_Wxcl\1.csv"))//判断是否有该文件
                 {
-                    SetSPBM.Add(dr[0].ToString());
-                    SPDW.Add(dr[0].ToString());
+                    DataTable Table_SetSPBM = GetCsv(@"F:\SH_Wxcl\1.csv");
+                    List<string> SetSPBM = new List<string>();
+                    List<string> SPDW = new List<string>();
+                    foreach (DataRow dr in Table_SetSPBM.Rows)
+                    {
+                        SetSPBM.Add(dr[0].ToString());
+                        SPDW.Add(dr[0].ToString());
+                    }
+                    SetCheckListBox(SetSPBM);
                 }
-                SetCheckListBox(SetSPBM);
+                else
+                    MessageBox.Show("文件  \rF:/SH_Wxcl/1.csv \r 不存在需手动选择商品编码");
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             DataTable dt = (DataTable)dataGridView1.DataSource;
-            List<string> SPBM_True = new List<string>();
-            List<string> YF_True = new List<string>();
-            for(int i =0;i<checkedListBox1.Items.Count;i++)
+            DataTable dt_New = Table_HB(Table_SX(dt));
+            string Csv_name = DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString() + " " + DateTime.Now.Hour.ToString() + "-" + DateTime.Now.Minute.ToString() + "-" + DateTime.Now.Second.ToString();
+            string File = @"F:\SH_Wxcl\out\" + Csv_name + ".xls";
+            if (!Directory.Exists(@"F:\SH_Wxcl\out\"))
             {
-                if(checkedListBox1.GetItemChecked(i))
-                {
-                    SPBM_True.Add(checkedListBox1.Items[i].ToString());
-                }
+                Directory.CreateDirectory(@"F:\SH_Wxcl\out\");
             }
-            for(int j=0;j<checkedListBox2.Items.Count;j++)
-            {
-                if(checkedListBox2.GetItemChecked(j))
-                {
-                    YF_True.Add(checkedListBox2.Items[j].ToString());
-                }
-            }
-            DataTable dt_SX = dt.Clone();
-            foreach(DataRow dr in dt.Rows)
-            {
-                if(SPBM_True.Contains(dr["商品编码"]) && !YF_True.Contains(dr["运费(自提)"]))
-                {
-                    DataRow Temp_dr = dt_SX.NewRow();
-                    Temp_dr.ItemArray = dr.ItemArray;
-                    dt_SX.Rows.Add(Temp_dr);
-                }
-            }
-            dataGridView1.DataSource = dt_SX;
+            DataTableToCsv(dt_New, File);
+            MessageBox.Show("文件已经保存在：\r" + File);
         }
     }
 }

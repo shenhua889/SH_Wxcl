@@ -16,3 +16,15 @@ C:\Users\shenhua\Desktop\程序\SH_Wxcl\SH_Wxcl\obj\x86\Debug\SH_Wxcl.csprojReso
 C:\Users\shenhua\Desktop\程序\SH_Wxcl\SH_Wxcl\obj\x86\Debug\SH_Wxcl.Form1.resources
 C:\Users\shenhua\Desktop\程序\SH_Wxcl\SH_Wxcl\obj\x86\Debug\SH_Wxcl.Properties.Resources.resources
 C:\Users\shenhua\Desktop\程序\SH_Wxcl\SH_Wxcl\obj\x86\Debug\SH_Wxcl.csproj.GenerateResource.Cache
+F:\post\SH_Wxcl\obj\x86\Debug\SH_Wxcl.Form1.resources
+F:\post\SH_Wxcl\obj\x86\Debug\SH_Wxcl.Properties.Resources.resources
+F:\post\SH_Wxcl\obj\x86\Debug\SH_Wxcl.csproj.GenerateResource.Cache
+F:\post\SH_Wxcl\obj\x86\Debug\SH_Wxcl.exe
+F:\post\SH_Wxcl\obj\x86\Debug\SH_Wxcl.pdb
+F:\post\SH_Wxcl\bin\x86\Debug\SH_Wxcl.exe.config
+F:\post\SH_Wxcl\bin\x86\Debug\SH_Wxcl.exe.manifest
+F:\post\SH_Wxcl\bin\x86\Debug\SH_Wxcl.application
+F:\post\SH_Wxcl\bin\x86\Debug\SH_Wxcl.exe
+F:\post\SH_Wxcl\bin\x86\Debug\SH_Wxcl.pdb
+F:\post\SH_Wxcl\obj\x86\Debug\SH_Wxcl.exe.manifest
+F:\post\SH_Wxcl\obj\x86\Debug\SH_Wxcl.application

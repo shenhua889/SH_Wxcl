@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SH_Wxcl.exe" size="16384">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SH_Wxcl.exe" size="15872">
       <assemblyIdentity name="SH_Wxcl" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>5gmduEPl7fAj//J6y5l6GX7YjRE=</dsig:DigestValue>
+        <dsig:DigestValue>vWZHn2QQdGu+owpC2u9l0OP+fMI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
