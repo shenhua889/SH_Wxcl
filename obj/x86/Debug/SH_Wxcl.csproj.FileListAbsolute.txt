@@ -1,0 +1,18 @@
+c:\users\shenhua\documents\visual studio 2015\Projects\SH_Wxcl\SH_Wxcl\bin\x86\Debug\SH_Wxcl.exe.config
+c:\users\shenhua\documents\visual studio 2015\Projects\SH_Wxcl\SH_Wxcl\bin\x86\Debug\SH_Wxcl.exe
+c:\users\shenhua\documents\visual studio 2015\Projects\SH_Wxcl\SH_Wxcl\bin\x86\Debug\SH_Wxcl.pdb
+c:\users\shenhua\documents\visual studio 2015\Projects\SH_Wxcl\SH_Wxcl\obj\x86\Debug\SH_Wxcl.Form1.resources
+c:\users\shenhua\documents\visual studio 2015\Projects\SH_Wxcl\SH_Wxcl\obj\x86\Debug\SH_Wxcl.Properties.Resources.resources
+c:\users\shenhua\documents\visual studio 2015\Projects\SH_Wxcl\SH_Wxcl\obj\x86\Debug\SH_Wxcl.csproj.GenerateResource.Cache
+c:\users\shenhua\documents\visual studio 2015\Projects\SH_Wxcl\SH_Wxcl\obj\x86\Debug\SH_Wxcl.exe
+c:\users\shenhua\documents\visual studio 2015\Projects\SH_Wxcl\SH_Wxcl\obj\x86\Debug\SH_Wxcl.pdb
+C:\Users\shenhua\documents\visual studio 2015\Projects\SH_Wxcl\SH_Wxcl\obj\x86\Debug\SH_Wxcl.csprojResolveAssemblyReference.cache
+C:\Users\shenhua\Desktop\程序\SH_Wxcl\SH_Wxcl\bin\x86\Debug\SH_Wxcl.exe.config
+C:\Users\shenhua\Desktop\程序\SH_Wxcl\SH_Wxcl\obj\x86\Debug\SH_Wxcl.exe
+C:\Users\shenhua\Desktop\程序\SH_Wxcl\SH_Wxcl\obj\x86\Debug\SH_Wxcl.pdb
+C:\Users\shenhua\Desktop\程序\SH_Wxcl\SH_Wxcl\bin\x86\Debug\SH_Wxcl.exe
+C:\Users\shenhua\Desktop\程序\SH_Wxcl\SH_Wxcl\bin\x86\Debug\SH_Wxcl.pdb
+C:\Users\shenhua\Desktop\程序\SH_Wxcl\SH_Wxcl\obj\x86\Debug\SH_Wxcl.csprojResolveAssemblyReference.cache
+C:\Users\shenhua\Desktop\程序\SH_Wxcl\SH_Wxcl\obj\x86\Debug\SH_Wxcl.Form1.resources
+C:\Users\shenhua\Desktop\程序\SH_Wxcl\SH_Wxcl\obj\x86\Debug\SH_Wxcl.Properties.Resources.resources
+C:\Users\shenhua\Desktop\程序\SH_Wxcl\SH_Wxcl\obj\x86\Debug\SH_Wxcl.csproj.GenerateResource.Cache
